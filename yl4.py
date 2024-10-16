@@ -2,12 +2,18 @@
 # Ülesanded 4
 import turtle
 #Ringi pindala ja Turtle
-r = 10
-s = 3.14*r**2
-p = 2 * 3.14 * r
-print(f"Ringi pindala on {s:.2f} ja ümbermõõt on {p:.2f}")
-turtle.circle(r*10, 360)
-turtle.done()
+
+try:
+    r = 10
+    s = 3.14*r**2
+    p = 2 * 3.14 * r
+    print(f"Ringi pindala on {s:.2f} ja ümbermõõt on {p:.2f}")
+    turtle.circle(r*2, 360)
+    turtle.done()
+except:
+    print("Sisestus vale!")
+    """"
+
 #Kingituste pakkimine
 try:
     kast = 5
@@ -39,3 +45,4 @@ a = int(input("lisa 1 külg: "))
 b = int(input("lisa 2 külg: "))
 p = 2 * (a + b)
 print(f"aia kogupikkus on {p} meetrit")
+"""
