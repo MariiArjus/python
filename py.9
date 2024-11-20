@@ -1,0 +1,51 @@
+e = 50
+
+import turtle
+turtle.speed(0)
+
+turtle.penup()
+turtle.goto(200,200)
+turtle.pendown()
+#6
+for j in range(4):
+    turtle.left(90)
+    for i in range(2):
+        turtle.forward(100)
+        turtle.right(90)
+        turtle.forward(50)
+        turtle.right(90)
+    
+turtle.penup()
+turtle.goto(-200,200)
+turtle.pendown()
+#7
+for j in range(8):
+    turtle.left(360/8)
+    for i in range(2):
+        turtle.forward(100)
+        turtle.right(90)
+        turtle.forward(50)
+        turtle.right(90)
+    turtle.right(90)
+    turtle.forward(50)
+
+#4
+turtle.penup()
+turtle.goto(-200,-200)
+turtle.pendown()
+
+for j in range(5):
+    turtle.left(90-72)
+    turtle.right(90)
+    turtle.forward(50)
+    for i in range(3):
+        turtle.right(90)
+        turtle.forward(100)
+    turtle.right(90)
+    turtle.forward(50)
+
+
+
+
+
+turtle.done()
