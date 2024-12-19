@@ -2,26 +2,7 @@
 # Shopping List
 # Create a program that will keep track of items for a shopping list.
 # The program should keep asking for new items until nothing is entered (no input followed by enter/return key). The program should then display the full shopping list.
-# ostukorv = ["õunad", "banaanid", "sai", "keefir", "juust"]
-# int(input("Sisestage oma tooted"))
-# list = []
-# vajalikud_tooted = True
-
-# while True:
-#     soovitud_tooted = input("Millist toodet sooviksid lisada? ")
-#     list.append(soovitud_tooted)
-#     print("Sinu ostukorvis on järgnevad asjad: ")
-
-#     for toode in soovitud_tooted:
-#         print("- " + toode)
-
-#         vastus = input("Soovite veel asju ostukorvi lisada? (j/e) ")
-#         if vastus == "n":
-#             vajalikud_tooted = False
-
-# print("Sinu ostukorvi lõpptulemus on: ")
-# for toode in vajalikud_tooted:
-#     print("- " + toode)
+"""
 poe_list = []
 soovitud_tooted = True
 while soovitud_tooted == True:
@@ -38,9 +19,7 @@ while soovitud_tooted == True:
 print("Teie ostukorvi lõpptulemus on:  ")
 for item in poe_list:
     print("-  " + toode)
-
-
-
+"""
 
 # 3
 # Positiivsed ja negatiivsed
@@ -48,7 +27,17 @@ for item in poe_list:
 # kasutaja sisestab 5 arvu ja programm tuvastab, kumba loendisse selle lisab 2p
 # nulli lisamisel ei tehta midagi 1p
 # väljasta mõlemad loendit 1p
-
+"""
+pos = []
+neg = []
+num = int(input("Sisestage arv: "))
+if num > 0:
+    pos.append(num)
+    print(pos, "see on positiivne arv")
+elif num < 0:
+    neg.append(num)
+    print(neg, "see on negatiivne arv")
+"""
 
 # 6 
 # Koosta programm, mis kontrollib, kas kasutaja poolt sisestatud arv on paaris või paaritu
@@ -57,8 +46,14 @@ for item in poe_list:
 # kood mis teavitab paaris või paaritust arvust - 1p
 # kuvatakse programmi pealkiri - 1p
 # kood kommenteeritud - 1p
+"""
+kysimus = int(input("Palun sisestage arv: "))
 
-
+if kysimus % 2 == 0:
+    print(f"Number {kysimus} on paaris arv")
+else:
+    print(f"Number {kysimus} on paaritu arv")
+"""
 
 # 9
 # Emaili kontroll
@@ -67,6 +62,15 @@ for item in poe_list:
 # programm tükeldab selle ja väljastab lause: 'Tere enimi, sinu email on server serveris ja domeeniks on sul com' - 1p
 # kasutajalt küsitud küsimused on selgelt üheselt mõistetavad - 1p
 # kood kommenteeritud - 1p
+def main():
+    email = input("Sisestage oma email")
+
+if "@" in email and "." in email.split("@")[-1]:
+    print("Sisestatud email on õige")
+else: 
+    print("Sisestatud email on vale")
+
+
 
 
 
@@ -85,5 +89,7 @@ for item in poe_list:
 # 	Kalev Kaamel m 2570
 # 	Karmen Kass n 2120
 # 	Kornelius Koer m 2250
+
+
 
 
