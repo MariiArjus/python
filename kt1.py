@@ -1,95 +1,55 @@
-# 5 
-# Shopping List
-# Create a program that will keep track of items for a shopping list.
-# The program should keep asking for new items until nothing is entered (no input followed by enter/return key). The program should then display the full shopping list.
-"""
-poe_list = []
-soovitud_tooted = True
-while soovitud_tooted == True:
-    
-    lisatud_tooted = input("Milliseid tooteid soovite lisada?  ")
-    poe_list.append(lisatud_tooted)
-    print("Teie ostukorvis on järgnevad tooted:  ")
-    for toode in poe_list:
-        print("-  " + toode)
-    
-    vastus = input("Soovite veel tooteid lisada? (ja/ei)  ")
-    if vastus == "ei":
-        soovitud_tooted = False
-print("Teie ostukorvi lõpptulemus on:  ")
-for item in poe_list:
-    print("-  " + toode)
-"""
+# ÜLESANNE 4 - Jootraha kalkulaator
 
-# 3
-# Positiivsed ja negatiivsed
-# tee kaks loendit positiivsete ja negatiivsete arvude hoidmiseks 1p
-# kasutaja sisestab 5 arvu ja programm tuvastab, kumba loendisse selle lisab 2p
-# nulli lisamisel ei tehta midagi 1p
-# väljasta mõlemad loendit 1p
-"""
-pos = []
-neg = []
-num = int(input("Sisestage arv: "))
-if num > 0:
-    pos.append(num)
-    print(pos, "see on positiivne arv")
-elif num < 0:
-    neg.append(num)
-    print(neg, "see on negatiivne arv")
-"""
+# Restoranis on tavaks jätta teenindajale jootraha, mis moodustab tavaliselt vähemalt 15% arve summast.
 
-# 6 
-# Koosta programm, mis kontrollib, kas kasutaja poolt sisestatud arv on paaris või paaritu
-# kuvatakse korrektne arusaadav küsimus ja vastus - 1p
-# eelnev kontroll, kas kasutaja ei lisanud arvu või pani nulli - 1p
-# kood mis teavitab paaris või paaritust arvust - 1p
-# kuvatakse programmi pealkiri - 1p
-# kood kommenteeritud - 1p
-"""
-kysimus = int(input("Palun sisestage arv: "))
+# Programm küsib kasutajalt summa sõnena formaadis ##.##€ (kus iga # tähistab numbrit), eemaldab euro märgi (€) ja teisendab summa ujukomaarvuks (float).
+#  Näiteks, kui kasutaja sisestab 50.00€, tagastab programm 50.0.
 
-if kysimus % 2 == 0:
-    print(f"Number {kysimus} on paaris arv")
-else:
-    print(f"Number {kysimus} on paaritu arv")
-"""
+# Eeldatakse, et kasutaja sisestab väärtused alati nõutud formaadis.
+def teisenda_summa():
+    summa_str = input("Sisestage summa ##.##€ formaadis: ")
 
-# 9
-# Emaili kontroll
-# kasutaja lisab emaili kujul enimi.pnimi@server.com - 1p
-# programm kontrollib kas email on sisestatud õigesti - vähemalt @-märgi kontroll - 1p
-# programm tükeldab selle ja väljastab lause: 'Tere enimi, sinu email on server serveris ja domeeniks on sul com' - 1p
-# kasutajalt küsitud küsimused on selgelt üheselt mõistetavad - 1p
-# kood kommenteeritud - 1p
-def main():
-    email = input("Sisestage oma email")
+    summa_float = float(summa_str.replace("€", ""))
+    print(f"summa: {summa_float}")
+teisenda_summa()
 
-if "@" in email and "." in email.split("@")[-1]:
-    print("Sisestatud email on õige")
-else: 
-    print("Sisestatud email on vale")
+
+
+# ÜLESANNE 8 - NämNaäm
+
+# Oletame, et tavaks on süüa:
+#     Hommikusööki vahemikus 7:00 – 8:00
+#     Lõunasööki vahemikus 12:00 – 13:00
+#     Õhtusööki vahemikus 18:00 – 19:00
+
+# Oleks ju tore, kui sul oleks programm, mis ütleb sulle, millal on aeg süüa?
+# Failis sook.py loo programm, mis küsib kasutajalt aega ja väljastab, kas on aeg hommikusöögiks, lõunasöögiks või õhtusöögiks. Kui pole söögi aeg, ei väljasta programm midagi.
+
+# Eelda, et kasutaja sisestab aja 24-tunnises formaadis:
+
+#     #:## või ##:##
+# Ja eelda, et iga söögiaja vahemik on kaasav. Näiteks, kui aeg on 7:00, 7:01, 7:59 või 8:00, on aeg hommikusöögiks.
+# Programmi struktuur peaks olema järgmine:
+#     teisenda aeg (str) 24-tunnises formaadis vastavaks arvuks (float).
+#     Näiteks, kui antakse aeg "7:30", tagastab funktsioon 7.5.
+#     programm kontrollib aja alusel, kas on hommiku-, lõuna- või õhtusöögi aeg, ja väljastab vastava teate.
 
 
 
 
 
-# 14. Palkade võrdlus - Loo palk.txt fail töötajate nime, soo ja palganumbriga (10 töötajat).
-# 	Koosta programm, mis analüüsib kas firmas toimub diskrimineerimist soo järgi. Selleks võrdle omavahel meeste ja naiste palkade keskmiseid, samuti meeste ja naiste kõige kõrgemat palka. Programm peab tegema otsuse.
 
-# 	Hubert Hunt m 2340
-# 	Siim Siil m 2570
-# 	Märt Mäger m 1960
-# 	Vilma Vihmauss n 2060
-# 	Merike Metskits n 2250
-# 	Kati Karu n 2370
-# 	Elmar Elevant m 2900
-# 	Timoteus Tigu m 2850
-# 	Reet Rebane n 2340
-# 	Kalev Kaamel m 2570
-# 	Karmen Kass n 2120
-# 	Kornelius Koer m 2250
+# ÜLESANNE 9 - Coca-Cola automaat
 
+# Oletame, et automaat müüb Coca-Cola pudeleid hinnaga 50 senti ning aktsepteerib ainult järgmisi mündiväärtusi:
+#     25 senti
+#     10 senti
+#     5 senti
+
+# Failis coke.py loo programm, mis:
+#     Küsib kasutajalt korduvalt münti, teatades iga kord, kui palju raha on veel puudu.
+#     Kui kasutaja on sisestanud vähemalt 50 senti, arvutab programm ja väljastab tagasiantava raha hulga sentides.
+#     Eeldatakse, et kasutaja sisestab alati täisarve. Kui sisestatud väärtus ei ole 25, 10 ega 5, ignoreerib programm seda ja küsib uut sisendit.
 
 
 
