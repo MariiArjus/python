@@ -17,12 +17,24 @@
 #     Näiteks, kui antakse aeg "7:30", tagastab funktsioon 7.5.
 #     programm kontrollib aja alusel, kas on hommiku-, lõuna- või õhtusöögi aeg, ja väljastab vastava teate.
 
-kysimus= int(input("Mis kell on?"))
-ksimus = "7:30"
-x = ksimus.split(":")
+kysimus= str(input("Mis kell on? "))
+
+x = kysimus.split(":")
 kell = int(x[0]) + float(x[1])/60
-print(kysimus)
-print(kell)
+if  kell >= 7 and kell <=8:
+    print("Hommikusöök")
+elif kell >= 18 and kell <= 19:
+    print("Õhtusöök")
+else:
+    kell >= 12 and kell <=13
+    print("Lõunasöök")
+
+# else:
+#     kell >= 12 and kell <=13
+#     print("Lõunasöök")
+    
+#     elif kell >= 18 and kell <= 19
+
 
 
 
